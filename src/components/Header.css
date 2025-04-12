@@ -1,0 +1,21 @@
+/* CSS file for the Header class */
+
+/* importing Baloo2 font */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap');
+
+.header {
+  height: 125px;
+  width: 568px;
+  transition: color 0.5s ease;
+
+}
+.header .text-wrapper {
+  font-family: "Baloo 2", Helvetica;
+  font-size: 75px;
+  font-weight: 500;
+  left: 60px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: fixed;
+  top: 20px;
+}

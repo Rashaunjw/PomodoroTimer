@@ -1,0 +1,461 @@
+/* File that styles both the Sidebar class and the Bodies class that is incorporated into the Sidebar menu on website */
+
+/* Sidebar icon styling, and positioning */
+.sidebar {
+    height: 40px;
+    width: 60px;
+    transition: color 0.5s ease;
+    color: inherit;
+    z-index: 1100; 
+}
+.line {
+    height: 40px;
+    width: 60px;
+    transition: color 0.5s ease;
+    color: black;
+    z-index: 1100; 
+}
+.sidebar svg {
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+/* Dim background on rest of website when sidebar box appears */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+    z-index: 999;
+    transition: opacity 0.3s ease;
+}
+:root {
+    --border-color: #d38c2b;
+}
+
+
+
+/* Sidebar Box visibility, styling, and positioning */
+.sidebar-box {
+    height: 732px;
+    width: 1064px;
+    background-color: #ffffee;
+    border: 10px solid var(--border-color);
+    border-radius: 70px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    cursor: default;
+}
+.sidebar-box.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+/* Close Button positioning and styling for close button image */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1101;
+}
+.close svg {
+    width: 40px;
+    height: 40px;
+    fill: black;
+    transition: transform 0.2s ease-in-out;
+}
+
+
+
+/* Positioning, styling, and hovering effect for label buttons */
+.label {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Align text in the middle */
+    width: 100%; /* Ensure full width */
+    position: absolute;
+    top: 5%; /* Adjust vertical position */
+    left: 47%;
+    transform: translateX(-50%);
+    gap: 90px; /* Space between buttons */
+}
+.label-button {
+    background: none;
+    border: none;
+    color: #000000;
+    font-family: "Baloo 2", Helvetica;
+    font-size: 35px;
+    font-weight: 401;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    position: relative; /* Needed for box-shadow effect */
+}
+.label-button::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 15px; /* ✅ Adjust to move underline closer to text */
+    width: 0%; /* ✅ Start with no underline */
+    height: 3px;
+    background-color: #000000; /* ✅ Matches Pomodoro theme */
+    transition: width 0.3s ease, left 0.3s ease;
+    border-radius: 4px; /* ✅ Rounds the edges */
+
+}
+.label-button:hover::after {
+    width: 100%; /* ✅ Expands to full width */
+    left: 0%; /* ✅ Aligns with the button */
+}
+.label-button.selected::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 15px; /* Moves it higher */
+    width: 87%;
+    border-radius: 4px; /* ✅ Rounds the edges */
+    height: 3px;
+    background-color: #000000;
+    transform: translateX(-50%);
+}
+
+
+
+
+/* Bodies class styling */
+
+
+
+
+/* Styling for the text in Body1 "What is Pomodoro?" */
+.body-text1 {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    position: absolute;
+    top: 18%; 
+    left: 48%;
+    transform: translateX(-50%);
+    gap: 10px; 
+} 
+.body-text1 .text-wrapper4{
+    color: #000000;
+    font-family: "Baloo 2", Helvetica;
+    font-size: 27px; 
+    font-weight: 400;
+    text-align: center;
+    white-space: wrap; 
+}
+.body-text1 .text-wrapper5{
+    color: #000000;
+    font-family: "Baloo 2", Helvetica;
+    font-size: 38px; 
+    font-weight: 500;
+    text-align: center;
+    white-space: wrap; 
+}
+
+.body-text1 .text-wrapper6 {
+    color: #000000;
+    font-family: "Baloo 2", Helvetica;
+    font-size: 27px; 
+    font-weight: 400;
+    text-align: left;
+    white-space: nowrap; 
+}
+
+
+
+/* Styling and positioning for text in Body2 "Custom Timer" */
+.body-text2 {
+    display: flex;
+    font-family: "Baloo 2", Helvetica;
+    flex-direction: row; /* Align items in a row */
+    justify-content: center; /* Center the columns */
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 32%;
+    left: 55%;
+    transform: translateX(-50%);
+    gap: 130px; /* Space between columns */
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rectangle {
+    font-family: "Baloo 2", Helvetica;
+    font-size: 27px !important;
+    font-weight: 470 !important;
+}
+
+
+
+/* Styling for Titles (Pomodoro, Short Break, Long Break) */
+.text-wrapper7 {
+    font-family: "Baloo 2", Helvetica;
+    font-size: 45px;
+    font-weight: 401;
+    text-align: center;
+    margin-bottom: 15px; /* Space before input box */
+}
+
+
+
+/* Input Box styling and positioning in Body2 */
+.box {
+    height: 47px;
+    width: 168px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box .rectangle {
+    background-color: #ffffff;
+    border: 3.5px solid #d38c2b;
+    border-radius: 21px;
+    height: 40px;
+    width: 170px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    outline: none;
+}
+
+
+
+/* Minutes Label styling */
+.text-wrapper9 {
+    font-family: "Baloo 2", Helvetica;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 17px;
+}
+
+
+
+/* Save button sttyling and hover effects in Body2 */
+.save-button {
+    height: 58;
+    width: 117;
+    background-color: var(--border-color);
+    font-family: "Baloo 2", Helvetica;
+    font-size: 30px;
+    font-weight: 20px;
+    padding: 1px 24px;
+    border: none;
+    border-radius: 27px;
+    cursor: pointer;
+    position: absolute;
+    top: 380px;
+    right: 130px;
+}
+.save-button:hover {
+    background-color: #b16f1e;
+}
+
+
+
+/* Clear button in Body2 */
+.clear-button {
+    background: none;
+    border: none;
+    font-family: "Baloo 2", sans-serif;
+    font-size: 30px;
+    font-weight: 20px;
+    color: black; 
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    position: absolute;
+    top: 380px;
+    bottom: 20px; 
+    left: 50px; 
+}
+
+
+
+/* Text styling and positioning in Body3 */
+.body-text3 {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    position: absolute;
+    top: 15%; 
+    left: 48%;
+    transform: translateX(-50%);
+    gap: 20px;
+}
+.text-wrapper11 {
+    font-family: "Baloo 2", Helvetica;
+    font-size: 38px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 1px; 
+}
+.text-wrapper13 {
+    font-family: "Baloo 2", Helvetica;
+    font-size: 38px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 5px; 
+}
+
+
+
+/* Task button styling, positioning, and hover effect */
+.task-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.task-button {
+    background: none;
+    border: none;
+    font-family: "Baloo 2", Helvetica;
+    font-size: 28px;
+    padding: 3px 20px;
+    border-radius: 27px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.task-button.selected {
+    background-color: var(--border-color);
+    border: 3px solid var(--border-color);
+}
+.task-button.selected[data-border="#ffcd74"] {
+    color: black !important;
+}
+.task-button:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* Task input styling */
+.task-input {
+    background-color: #ffffff;
+    border: 3px solid var(--border-color);
+    border-radius: 26px;
+    height: 45px;
+    width: 400px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: regular;
+    color: #333;
+    outline: none;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-family: "Baloo 2";
+}
+
+
+
+/* ✅ Pomodoro Input & Arrows and text box */
+.pomodoro-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0px;
+}
+.pomodoro-input {
+    background-color: #ffffff;
+    border: 3px solid #d38c2b;
+    border-radius: 25px;
+    height: 40px;
+    width: 85px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: regular;
+    color: #333;
+    outline: none;
+    font-family: "Baloo 2";
+    margin-right: 50px;
+}
+
+
+
+/* Up & Down Arrow Buttons */
+.arrow-buttons {
+    display: flex;
+    flex-direction: column;
+    
+}
+.arrow-up:hover{
+    transform: scale(1.05); /* ✅ Slightly increase size */
+
+}
+.arrow-down:hover{
+    transform: scale(1.10); /* ✅ Slightly increase size */
+
+}
+.arrow-up{
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 15px;
+} 
+.arrow-down {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+/* Save button positioning and styling for Body3 */
+.body-text3 .save-button {
+    top: 500px;
+    right: 390px;
+}
+.save-button[data-border="#9b294a"] {
+    color: black !important;
+}
+
+
+
+/* Cancel button in Body3 */
+.cancel-button {
+    height: 58;
+    width: 117;
+    font-family: "Baloo 2", Helvetica;
+    font-size: 30px;
+    font-weight: 20px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    position: absolute;
+    top: 500px;
+    right: 580px;
+}
+
+
+
+

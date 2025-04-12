@@ -1,0 +1,31 @@
+/* File that styles the App class that runs all functionality for website */
+
+/* Styling for original color of website background */
+body {
+  background-color: #ffcd74; /* Static background color */
+  margin: 0; 
+  height: 100vh; 
+}
+
+/* Animation for task display */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Task container styling for proper positioning */
+.task-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}

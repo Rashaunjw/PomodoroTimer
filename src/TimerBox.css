@@ -1,0 +1,215 @@
+/* CSS file for the TimerBox class */
+
+/* overall styling for the entirety of the timerbox on the main screen */
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 600px; 
+  margin-top: 40px; 
+}
+
+
+
+/* overall styling for components in the TimerBox */
+.tbox {
+  display: flex; 
+  align-items: center; 
+  width: 1227px;
+  height: 525px;
+  margin-left: 0px;
+  background-color: #ffffee; 
+  border: 10px solid var(--border-color);
+  border-radius: 70px;
+  box-sizing: border-box;
+  position: relative;
+  gap: 10px;
+}
+
+
+
+/* styling for the timer in the TimerBox */ 
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+  height: 320px; 
+  text-align: center;
+  font-size: 200px;
+  font-family: "Baloo 2", Helvetica;
+  font-weight: 500;
+  color: #000;
+  margin: 0 auto;
+}
+
+
+
+/* styling and organization of the play, pause, and refresh buttons */
+.button-column-left {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between; 
+  gap: 70px;
+  margin-left: 90px;
+}
+.play-icon,
+.stop-icon,
+.refresh-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 90px;
+  cursor: pointer;
+}
+
+
+
+/* Style and organization of the pomodoro, short break, and long break buttons */
+.button-column-right {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between; 
+  gap: 70px;
+  margin-right: 80px;
+}
+.pbox,
+.sbox,
+.lbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 65px;
+  border-radius: 33px;
+  font-family: "Baloo 2", Helvetica;
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+/* specific styling for each pomodoro, short break, and long break button to align horizontally with the play, pause, and refresh buttons */
+.pbox {
+  background-color: #ffcd74;
+  margin-top: 20px; 
+}
+.sbox {
+  background-color: #ff7251;
+  margin-top: 30px; 
+}
+.lbox {
+  background-color: #9b294a;
+  margin-top: 40px; 
+}
+/* color of text in pomodoro, short break, and long break buttons */
+.text-content {
+  color: #333;
+}
+.text-content2 {
+  color: #fff;
+}
+
+
+
+
+
+/* hover effect for all interactive buttons */
+.button-column-left div:hover{
+  transform: scale(1.1); 
+}
+.button-column-right div:hover {
+  transform: scale(1.08); 
+}
+.button-column-left div:active {
+  transform: scale(0.7); 
+}
+
+
+
+
+/* Style for task and pomodoro boxes */
+.task-box, .pomodoro-box {
+  position: absolute;
+  left: 48%;
+  transform: translateX(-50%);
+  border: 4px solid; 
+  border-radius: 20px;
+  background-color: #ffffee;
+  width: 280px;
+  height: 55px;
+  padding: 0;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: "Baloo 2", Helvetica;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+/* Position for task input box */
+.task-box {
+  top: 45px;
+}
+/* Position for pomodoro input box */
+.pomodoro-box {
+  bottom: -20px;
+}
+/* Style for text inside the text and pomodoro input boxes */
+.task-box div, .pomodoro-box div {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90%;
+  padding: 0;
+}
+/* Effects and color for the task and pomodoro input made by user */
+.task-box, .pomodoro-box {
+  transition: all 0.3s ease;
+  background-color: #ffffee !important; 
+}
+/* animations for the task input from user*/
+.task-box {
+  animation: fadeInDown 0.5s ease;
+}
+.pomodoro-box {
+  animation: fadeInUp 0.5s ease;
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -15px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 15px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+
+
+
+
+
+/* Effect for both columns of buttons*/
+.button-column-left div,
+.button-column-right div {
+  transition: transform 0.2s ease-in-out;
+}
